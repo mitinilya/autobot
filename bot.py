@@ -16,15 +16,15 @@ from aiogram.types import (
 )
 
 # ===================== CONFIG =====================
-BOT_TOKEN = "8539066193:AAFMm-3tTTFmEp8lEeCw0H78MonhN3UPCvE"
+BOT_TOKEN = "0E"
 
 # Каналы назначения (публикуем ВСЕГДА во все)
-CHAT_BY_ID = -1003606607551  # 🇧🇾 твой
-CHAT_DE_ID = -1003361485983 # 🇩🇪 немецкий
+CHAT_BY_ID = 0  # 🇧🇾 твой
+CHAT_DE_ID = 0 # 🇩🇪 немецкий
 CHAT_RU_ID = 0                # 🇷🇺 русский (0 = нет)
 
 # Один админ
-ADMIN_ID = 579495919
+ADMIN_ID = 0
 
 
 # SQLite файл (права доступа сохраняются после рестарта)
