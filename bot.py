@@ -16,15 +16,26 @@ from aiogram.types import (
 )
 
 # ===================== CONFIG =====================
-BOT_TOKEN = "0E"
+import os
 
-# Каналы назначения (публикуем ВСЕГДА во все)
-CHAT_BY_ID = 0  # 🇧🇾 твой
-CHAT_DE_ID = 0 # 🇩🇪 немецкий
-CHAT_RU_ID = 0                # 🇷🇺 русский (0 = нет)
+def env_int(name: str, default: int = 0) -> int:
+    v = os.getenv(name)
+    if v is None or v == "":
+        return default
+    return int(v)
 
-# Один админ
-ADMIN_ID = 0
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+ADMIN_ID = env_int("ADMIN_ID", 0)
+
+CHAT_BY_ID = env_int("CHAT_BY_ID", 0)
+CHAT_DE_ID = env_int("CHAT_DE_ID", 0)
+CHAT_RU_ID = env_int("CHAT_RU_ID", 0)
+
+DB_PATH = os.getenv("DB_PATH", "bot.db")
+
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN пуст. Проверь .env")
+
 
 
 # SQLite файл (права доступа сохраняются после рестарта)
